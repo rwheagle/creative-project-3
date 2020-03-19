@@ -1,32 +1,19 @@
 <template>
 <div>
-  <div class="wrapper">
-    <div class="search">
-      <h2>Search Here:</h2>
-      <form class="pure-form">
-        <i class="fas fa-search"></i><input v-model="searchText" />
-      </form>
-    </div>
-  </div>
-  <RecipeList :recipes="recipes" />
+  <FavoritesList :recipes="recipes" />
 </div>
 </template>
 
 <script>
-import RecipeList from "../components/RecipeList.vue"
+import FavoritesList from "../components/FavoritesList.vue"
 export default {
   name: 'Home',
   components: {
-     RecipeList
-  },
-  data() {
-    return {
-      searchText: '',
-    }
+     FavoritesList
   },
   computed: {
      recipes() {
-      return this.$root.$data.recipes.filter(recipe => recipe.name.toLowerCase().search(this.searchText) >= 0);
+      return this.$root.$data.favorites;
     }
   },
 }
