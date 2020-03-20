@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <div id="nav">
-    <img src="images/recipe.jpg">
+    <img src="/images/recipe.jpg">
     <h1>Kyler's Recipes</h1>
     <router-link to="/">Home</router-link> |
     <router-link to="/favorites">Favorites</router-link> |
