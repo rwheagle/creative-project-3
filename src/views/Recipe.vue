@@ -1,19 +1,22 @@
 <template>
 <div class="all">
-<h1>{{recipe.name}}</h1>
-<div class="wrapper">
-  <div class="image">
-    <img :src="recipe.image">
-  </div>
-  <div class="recipe">
-    <div class="ingredient" v-for="ingredient in recipe.ingredients" :key="ingredient.name">
-      <h4>{{ingredient.measure}} {{ingredient.name}}</h4>
+
+  <div class="wrapper">
+    <div class="image">
+      <img :src="recipe.image">
     </div>
-    <h3>{{recipe.instructions}}</h3>
-    <p>Country: {{recipe.country}} | Category: {{recipe.category}}</p>
-    <p><a href='recipe.source'>Source</a></p>
+    <div class="recipe">
+      <h1>{{recipe.name}}</h1>
+      <div class="ingredients">
+        <div class="ingredient" v-for="ingredient in recipe.ingredients" :key="ingredient.name">
+          <h3>{{ingredient.measure}} {{ingredient.name}}</h3>
+        </div>
+      </div>
+      <h3>{{recipe.instructions}}</h3>
+      <p>Country: {{recipe.country}} | Category: {{recipe.category}}</p>
+      <p><a :href='recipe.source'>Source</a></p>
+    </div>
   </div>
-</div>
 </div>
 </template>
 
@@ -35,13 +38,14 @@ export default {
   justify-content: center;
   margin-bottom: 5%;
 }
+
 .all {
   display: block;
   align-items: center;
   justify-content: center;
 }
+
 .recipes {
-  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -49,40 +53,29 @@ export default {
 
 .recipe {
   margin: 10px;
-  margin-top: 50px;
-  width: 25%;
+  width: 66%;
 }
 
-.recipe img {
+.image img {
   border: 2px solid #333;
   height: 250px;
-  width: 100%;
   object-fit: cover;
 }
 
-.recipe .image {
+.image {
   padding: 10px;
   display: flex;
   justify-content: center;
+  width: 33%;
 }
 
-.info {
-  background: #8bbdd9;
-  color: #FFF;
-  padding: 10px;
-  height: 80px;
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4%;
+  justify-content: space-around;
 }
-
-.info h1 {
-  font-size: 20px;
-}
-
-.info h2 {
-  font-size: 14px;
-}
-
-.info p {
-  margin: 0px;
-  font-size: 10px;
+.ingredient{
+  margin: 10px;
 }
 </style>

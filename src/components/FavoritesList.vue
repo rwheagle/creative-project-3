@@ -1,5 +1,6 @@
 <template>
 <div class="wrapper">
+  <template v-if="recipes.length !== 0">
   <div class="recipes">
     <div class="recipe" v-for="recipe in recipes" :key=" recipe.id">
       <div class="info">
@@ -19,6 +20,14 @@
       </div>
     </div>
   </div>
+  </template>
+  <template v-else>
+    <div class="none">
+      <h1>No Favorites Found</h1>
+      <h3>Please create some favorites to add them here. </h3>
+    </div>
+  </template>
+
 </div>
 </template>
 

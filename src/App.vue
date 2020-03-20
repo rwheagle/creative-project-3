@@ -33,7 +33,7 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #3792cb;
 }
 .footer {
   background-color: #FFF;
